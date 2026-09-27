@@ -1,0 +1,91 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+
+<div class="contenedor">
+
+    <h2>👤 Registro de Usuario</h2>
+
+    <p style="text-align: center;">
+        👋 ¡Únete a la aldea ninja!
+    </p>
+
+    {% if error %}
+
+        <p class="error">
+            ⚠️ {{ error }}
+        </p>
+
+    {% endif %}
+
+    <form method="POST" id="formRegistro">
+
+        {% csrf_token %}
+
+        <label>👤 Usuario:</label>
+
+        <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Ingresa tu usuario"
+            required
+        >
+
+
+        <label>📧 Email:</label>
+
+        <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Ingresa tu correo electrónico"
+            required
+        >
+
+
+        <label>🔒 Contraseña:</label>
+
+        <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Ingresa tu contraseña"
+            required
+        >
+
+        <button
+            type="button"
+            id="mostrarPassword"
+        >
+            👁️ Mostrar contraseña
+        </button>
+
+
+        <label>🔒 Confirmar contraseña:</label>
+
+        <input
+            type="password"
+            name="password_confirm"
+            id="password_confirm"
+            placeholder="Confirma tu contraseña"
+            required
+        >
+
+        <button
+            type="button"
+            id="mostrarPasswordConfirm"
+        >
+            👁️ Mostrar confirmación
+        </button>
+
+
+        <button type="submit">
+            📝 Registrarse
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

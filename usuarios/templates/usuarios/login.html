@@ -1,0 +1,66 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+
+<div class="contenedor">
+
+    <h2>🔐 Iniciar Sesión</h2>
+
+    <p style="text-align: center;">
+        👋 ¡Bienvenido de vuelta, ninja!
+    </p>
+
+    {% if error %}
+
+        <p class="error">
+            ⚠️ {{ error }}
+        </p>
+
+    {% endif %}
+
+    <form method="POST" id="formLogin">
+
+        {% csrf_token %}
+
+        <label>👤 Usuario:</label>
+
+        <input
+            type="text"
+            name="username"
+            id="login_username"
+            placeholder="Ingresa tu usuario"
+            required
+        >
+
+
+        <label>🔒 Contraseña:</label>
+
+        <input
+            type="password"
+            name="password"
+            id="login_password"
+            placeholder="Ingresa tu contraseña"
+            required
+        >
+
+
+        <button type="submit">
+            🔐 Ingresar
+        </button>
+
+    </form>
+
+
+    <p style="text-align: center; margin-top: 25px;">
+
+        👤 ¿No tienes cuenta?
+
+        <a href="/registro/">
+            Regístrate aquí
+        </a>
+
+    </p>
+
+</div>
+
+{% endblock %}

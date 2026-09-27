@@ -1,0 +1,44 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+
+<div class="contenedor inicio">
+
+    <h2>¡Bienvenido! 👋</h2>
+
+    <p>
+        Sistema de registro de usuarios
+    </p>
+
+    {% if mensaje %}
+
+        <p class="exito">
+            ✅ {{ mensaje }}
+        </p>
+
+    {% endif %}
+
+    <p>
+        Aquí podrás crear tu cuenta y acceder
+        a todas las funciones.
+    </p>
+
+    <p>
+        🍥 ¡Únete a nuestra comunidad ninja!
+    </p>
+
+    <nav>
+
+        <a href="/registro/">
+            👤 Crear una cuenta
+        </a>
+
+        <a href="/login/">
+            🔐 Iniciar sesión
+        </a>
+
+    </nav>
+
+</div>
+
+{% endblock %}
