@@ -160,3 +160,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+// Confirma antes de eliminar una herramienta
+function confirmarEliminacion() {
+
+    return confirm(
+        "¿Estás seguro de que deseas eliminar esta herramienta ninja?"
+    );
+}

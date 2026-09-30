@@ -1,0 +1,98 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>✏️ Actualizar herramienta</h1>
+
+    <p>
+        Modifica los datos de la herramienta seleccionada.
+    </p>
+
+    <form
+        action="/productos/modificar/{{ producto.id }}/"
+        method="post"
+    >
+
+        {% csrf_token %}
+
+        <label>Nombre de la herramienta:</label>
+
+        <input
+            type="text"
+            name="txtnom"
+            value="{{ producto.nombre }}"
+            required
+        >
+
+        <label>Proveedor Ninja:</label>
+
+        <select name="cbomar" required>
+
+            <option
+                value="Aldea de la Hoja"
+                {% if producto.marca == "Aldea de la Hoja" %}selected{% endif %}
+            >
+                🍃 Aldea de la Hoja
+            </option>
+
+            <option
+                value="Aldea de la Arena"
+                {% if producto.marca == "Aldea de la Arena" %}selected{% endif %}
+            >
+                🏜️ Aldea de la Arena
+            </option>
+
+            <option
+                value="Aldea de la Niebla"
+                {% if producto.marca == "Aldea de la Niebla" %}selected{% endif %}
+            >
+                🌫️ Aldea de la Niebla
+            </option>
+
+            <option
+                value="Aldea de la Nube"
+                {% if producto.marca == "Aldea de la Nube" %}selected{% endif %}
+            >
+                ☁️ Aldea de la Nube
+            </option>
+
+            <option
+                value="Aldea de la Roca"
+                {% if producto.marca == "Aldea de la Roca" %}selected{% endif %}
+            >
+                👊🏿 Aldea de la Roca
+            </option>
+
+        </select>
+
+        <label>Precio:</label>
+
+        <input
+            type="number"
+            name="txtpre"
+            value="{{ producto.precio }}"
+            min="0"
+            required
+        >
+
+        <br>
+
+        <button type="submit">
+            💾 Guardar cambios
+        </button>
+
+    </form>
+
+    <div style="text-align: center;">
+
+        <a href="/productos/listado/">
+            ← Cancelar
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

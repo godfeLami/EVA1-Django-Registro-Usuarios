@@ -1,0 +1,33 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>🗡️ Sistema de Herramientas Ninja</h1>
+
+    <p>
+        Administra el inventario de herramientas utilizadas
+        por los ninjas de las grandes aldeas.
+    </p>
+
+    <p>
+        Registra, consulta, modifica y elimina herramientas
+        del inventario ninja.
+    </p>
+
+    <div style="text-align: center; margin-top: 30px;">
+
+        <a href="/productos/listado/">
+            📋 Ver inventario
+        </a>
+
+        <a href="/productos/registrar/">
+            ➕ Registrar herramienta
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

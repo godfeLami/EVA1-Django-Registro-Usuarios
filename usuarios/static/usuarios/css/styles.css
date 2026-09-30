@@ -1,6 +1,6 @@
-/* ==========================================
-   CONFIGURACIÓN GENERAL
-   ========================================== */
+/* =========================================
+   ESTILO GENERAL - SISTEMA NINJA
+   ========================================= */
 
 * {
     box-sizing: border-box;
@@ -12,548 +12,362 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #172331;
     min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
 
     background-image:
         linear-gradient(
-            rgba(10, 25, 38, 0.20),
-            rgba(10, 25, 38, 0.20)
+            rgba(15, 23, 42, 0.78),
+            rgba(15, 23, 42, 0.78)
         ),
-        url("../img/fondo.jpg");
+        url("../img/fondo-naruto.jpg");
 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
+    color: #1f2937;
 }
 
 
-/* ==========================================
-   HEADER
-   ========================================== */
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
 
-header {
-    background-color: #101e2b;
-    color: white;
+.container {
+    width: 90%;
+    max-width: 1100px;
 
-    padding: 10px 5%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 4px solid #ff7518;
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.45);
-}
-
-header img {
-    width: 115px;
-    height: auto;
-}
-
-
-/* ==========================================
-   NAVEGACIÓN
-   ========================================== */
-
-header nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-header nav a {
-    position: relative;
-
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-
-    padding: 12px 5px;
-
-    transition: 0.3s;
-}
-
-header nav a::after {
-    content: "";
-
-    position: absolute;
-    bottom: 3px;
-    left: 0;
-
-    width: 0;
-    height: 3px;
-
-    background-color: #ff7518;
-
-    transition: 0.3s;
-}
-
-header nav a:hover {
-    color: #ff7518;
-}
-
-header nav a:hover::after {
-    width: 100%;
-}
-
-
-/* ==========================================
-   BOTÓN MENÚ CELULAR
-   ========================================== */
-
-.menu-toggle {
-    display: none;
-
-    background: transparent;
-    color: white;
-
-    border: 2px solid #ff7518;
-
-    width: auto;
-
-    padding: 8px 12px;
-    margin: 0;
-
-    font-size: 22px;
-}
-
-
-/* ==========================================
-   CONTENIDO PRINCIPAL
-   ========================================== */
-
-main {
-    min-height: calc(100vh - 150px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 60px 20px;
-}
-
-
-/* ==========================================
-   TARJETA PRINCIPAL
-   ========================================== */
-
-.contenedor {
-    width: 100%;
-    max-width: 520px;
-
-    background-color: rgba(255, 255, 255, 0.96);
-
+    margin: 45px auto;
     padding: 35px;
 
-    border: 3px solid #ff7518;
-    border-radius: 20px;
+    /* Fondo sólido para que el contenido no quede sobre Naruto */
+    background: #ffffff;
+
+    border-radius: 18px;
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.45);
+        0 15px 40px rgba(0, 0, 0, 0.35);
 
-    backdrop-filter: blur(3px);
+    border-top: 6px solid #f97316;
+
+    color: #1f2937;
 }
 
 
-/* ==========================================
-   TÍTULOS
-   ========================================== */
+/* =========================================
+   TITULOS
+   ========================================= */
 
-.contenedor h2 {
-    text-align: center;
-
-    color: #172331;
-
+.container h1 {
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 
-    font-size: 30px;
-}
-
-.inicio h2 {
-    font-size: 38px;
-    margin-bottom: 15px;
-}
-
-
-/* ==========================================
-   TEXTOS
-   ========================================== */
-
-.contenedor p {
-    line-height: 1.6;
-}
-
-.inicio {
     text-align: center;
+
+    color: #ea580c;
+
+    font-size: 32px;
 }
 
-.inicio p {
+.container h2 {
+    color: #1e3a8a;
+}
+
+
+/* =========================================
+   TEXTOS
+   ========================================= */
+
+.container p {
+    text-align: center;
+
     font-size: 17px;
+    line-height: 1.6;
+
+    color: #475569;
 }
 
 
-/* ==========================================
-   FORMULARIOS
-   ========================================== */
+/* =========================================
+   BOTONES Y ENLACES
+   ========================================= */
 
-label {
-    display: block;
+.container a {
+    display: inline-block;
 
-    margin-top: 17px;
-    margin-bottom: 7px;
+    padding: 10px 18px;
+
+    margin: 5px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
 
     font-weight: bold;
-    color: #26384a;
+
+    color: white;
+
+    background: #1e3a8a;
+
+    transition: 0.2s;
 }
 
-input {
-    width: 100%;
+.container a:hover {
+    background: #172554;
 
-    padding: 13px 14px;
+    transform: translateY(-2px);
+}
 
-    border: 2px solid #d5d5d5;
-    border-radius: 9px;
+
+/* Botón naranja */
+
+.container button {
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #ea580c;
+
+    color: white;
 
     font-size: 15px;
 
-    outline: none;
-
-    transition: 0.3s;
-}
-
-input:focus {
-    border-color: #ff7518;
-
-    box-shadow:
-        0 0 0 3px rgba(255, 117, 24, 0.15);
-}
-
-
-/* ==========================================
-   BOTONES
-   ========================================== */
-
-button {
-    width: 100%;
-
-    margin-top: 20px;
-    padding: 13px;
-
-    border: none;
-    border-radius: 9px;
-
-    background-color: #ff7518;
-    color: white;
-
-    font-size: 16px;
     font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
-button:hover {
-    background-color: #e45d08;
+.container button:hover {
+    background: #c2410c;
 
     transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FORMULARIOS
+   ========================================= */
+
+.container form {
+    max-width: 650px;
+
+    margin: 25px auto;
+}
+
+.container label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+    color: #1e3a8a;
+}
+
+.container input,
+.container select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+.container input:focus,
+.container select:focus {
+    outline: none;
+
+    border-color: #ea580c;
 
     box-shadow:
-        0 5px 12px rgba(0, 0, 0, 0.25);
+        0 0 0 3px rgba(234, 88, 12, 0.15);
 }
 
 
-/* ==========================================
-   BOTONES MOSTRAR CONTRASEÑA
-   ========================================== */
+/* =========================================
+   TABLA CRUD
+   ========================================= */
 
-#mostrarPassword,
-#mostrarPasswordConfirm {
-    width: auto;
+.container table {
+    width: 100%;
+    margin-top: 30px;
 
-    margin-top: 8px;
+    border-collapse: separate;
+    border-spacing: 0;
 
-    padding: 7px 12px;
+    overflow: hidden;
 
-    background-color: #26384a;
+    border-radius: 12px;
 
-    font-size: 13px;
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
 }
 
-#mostrarPassword:hover,
-#mostrarPasswordConfirm:hover {
-    background-color: #172331;
-}
+.container th {
+    padding: 15px;
 
-
-/* ==========================================
-   MENSAJES
-   ========================================== */
-
-.error {
-    background-color: #ffe1e1;
-
-    color: #9c0000;
-
-    border-left: 5px solid #d00000;
-
-    padding: 12px;
-
-    border-radius: 7px;
-
-    margin-bottom: 20px;
-
-    font-weight: bold;
-}
-
-.exito {
-    background-color: #e0f7e4;
-
-    color: #176b25;
-
-    border-left: 5px solid #219638;
-
-    padding: 12px;
-
-    border-radius: 7px;
-
-    margin-bottom: 20px;
-
-    font-weight: bold;
-}
-
-
-/* ==========================================
-   ENLACES
-   ========================================== */
-
-.contenedor a {
-    color: #e45d08;
-    font-weight: bold;
-}
-
-.contenedor a:hover {
-    color: #172331;
-}
-
-
-/* ==========================================
-   NAVEGACIÓN DENTRO DE TARJETAS
-   ========================================== */
-
-.contenedor nav {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    margin-top: 25px;
-
-    flex-wrap: wrap;
-}
-
-.contenedor nav a {
-    background-color: #ff7518;
-
-    color: white;
-
-    padding: 12px 18px;
-
-    border-radius: 9px;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-.contenedor nav a:hover {
-    background-color: #e45d08;
-
-    color: white;
-
-    transform: translateY(-2px);
-}
-
-
-/* ==========================================
-   FOOTER
-   ========================================== */
-
-footer {
-    background-color: #101e2b;
+    background: #1e3a8a;
 
     color: white;
 
     text-align: center;
 
-    padding: 15px;
-
-    border-top: 3px solid #ff7518;
+    font-size: 15px;
 }
 
-footer p {
-    margin: 0;
+.container td {
+    padding: 14px;
 
-    font-size: 14px;
+    background: #ffffff;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    text-align: center;
+
+    color: #1f2937;
 }
 
-
-/* ==========================================
-   TABLET
-   ========================================== */
-
-@media (max-width: 900px) {
-
-    header {
-        padding: 10px 25px;
-    }
-
-    header nav {
-        gap: 15px;
-    }
-
-    header nav a {
-        font-size: 14px;
-    }
-
-    .contenedor {
-        max-width: 500px;
-    }
-
+.container tbody tr:hover td {
+    background: #fff7ed;
 }
 
 
-/* ==========================================
-   CELULARES
-   ========================================== */
+/* =========================================
+   BOTONES DE ACCIONES
+   ========================================= */
 
-@media (max-width: 700px) {
+.container td a {
+    padding: 7px 10px;
 
-    header {
-        padding: 10px 15px;
+    margin: 2px;
+
+    font-size: 13px;
+}
+
+.container td a:first-child {
+    background: #2563eb;
+}
+
+.container td a:first-child:hover {
+    background: #1d4ed8;
+}
+
+.container td a:last-child {
+    background: #dc2626;
+}
+
+.container td a:last-child:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================
+   MENSAJE CUANDO NO HAY PRODUCTOS
+   ========================================= */
+
+.container td[colspan] {
+    padding: 30px;
+
+    color: #64748b;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   SECCION DE ACCIONES
+   ========================================= */
+
+.acciones-crud {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 94%;
+
+        margin: 25px auto;
+
+        padding: 20px;
     }
 
-    header img {
-        width: 90px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    header nav {
-        display: none;
-
-        position: absolute;
-
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-
-        background-color: #101e2b;
-
-        padding: 15px;
-
-        flex-direction: column;
-
-        gap: 5px;
-
-        border-bottom: 3px solid #ff7518;
-    }
-
-    header nav.menu-abierto {
-        display: flex;
-    }
-
-    header nav a {
-        width: 100%;
-
-        text-align: center;
-
-        padding: 12px;
-    }
-
-    main {
-        min-height: calc(100vh - 130px);
-
-        padding: 30px 12px;
-
-        align-items: center;
-    }
-
-    .contenedor {
-        padding: 25px 18px;
-
-        border-radius: 15px;
-    }
-
-    .contenedor h2 {
+    .container h1 {
         font-size: 25px;
     }
 
-    .inicio h2 {
-        font-size: 30px;
+    .container table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
     }
 
-    .inicio p {
-        font-size: 16px;
+    .container a {
+        margin: 4px 2px;
     }
 
-    .contenedor nav {
+    .acciones-crud {
         flex-direction: column;
+
+        align-items: stretch;
     }
 
-    .contenedor nav a {
-        width: 100%;
-
+    .acciones-crud a {
         text-align: center;
     }
-
-    input {
-        font-size: 16px;
-    }
-
-    footer {
-        font-size: 12px;
-    }
-
 }
 
 
-/* ==========================================
-   CELULARES PEQUEÑOS
-   ========================================== */
+/* =========================================
+   PANTALLAS MUY PEQUEÑAS
+   ========================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
-    header img {
-        width: 80px;
+    .container {
+        padding: 15px;
     }
 
-    .contenedor {
-        padding: 20px 15px;
-    }
-
-    .contenedor h2 {
+    .container h1 {
         font-size: 22px;
     }
 
-    .inicio h2 {
-        font-size: 26px;
-    }
-
-    button {
+    .container p {
         font-size: 15px;
     }
 
+    .container button {
+        width: 100%;
+    }
 }

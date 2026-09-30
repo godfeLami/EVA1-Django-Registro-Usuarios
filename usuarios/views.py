@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.http import request
+from django.shortcuts import render, redirect
 from .models import Usuario
 from django.contrib.auth.hashers import make_password, check_password
 
@@ -114,9 +115,20 @@ def login(request):
         usuario.intentos = 0
         usuario.save()
 
+        # Guardamos el usuario en la sesión
+        request.session['usuario_id'] = usuario.id
+        
         # Enviamos el nombre de usuario a la plantilla de bienvenida
         return render(request, 'usuarios/bienvenida.html', {
             'username': usuario.username
         })
 
     return render(request, 'usuarios/login.html')
+
+# Cerrar sesión
+def logout(request):
+
+    # Eliminamos la información de la sesión
+    request.session.flush()
+
+    return redirect('/login/')

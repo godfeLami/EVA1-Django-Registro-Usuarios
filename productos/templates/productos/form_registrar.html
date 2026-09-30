@@ -1,0 +1,84 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>🗡️ Registrar herramienta ninja</h1>
+
+    <p>
+        Ingresa los datos de la nueva herramienta.
+    </p>
+
+    <form action="/productos/insertar/" method="post">
+
+        {% csrf_token %}
+
+        <label>Nombre de la herramienta:</label>
+
+        <input
+            type="text"
+            name="txtnom"
+            placeholder="Ej: Kunai"
+            required
+        >
+
+        <label>Proveedor Ninja:</label>
+
+        <select name="cbomar" required>
+
+            <option value="">
+                Seleccionar proveedor
+            </option>
+
+            <option value="Aldea de la Hoja">
+                🍃 Aldea de la Hoja
+            </option>
+
+            <option value="Aldea de la Arena">
+                🏜️ Aldea de la Arena
+            </option>
+
+            <option value="Aldea de la Niebla">
+                🌫️ Aldea de la Niebla
+            </option>
+
+            <option value="Aldea de la Nube">
+                ☁️ Aldea de la Nube
+            </option>
+
+            <option value="Aldea de la Roca">
+                👊🏿 Aldea de la Roca
+            </option>
+
+        </select>
+
+        <label>Precio:</label>
+
+        <input
+            type="number"
+            name="txtpre"
+            placeholder="Ej: 1500"
+            min="0"
+            required
+        >
+
+        <br>
+
+        <button type="submit">
+            🗡️ Registrar herramienta
+        </button>
+
+    </form>
+
+    <div style="text-align: center;">
+
+        <a href="/productos/listado/">
+            ← Volver al inventario
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

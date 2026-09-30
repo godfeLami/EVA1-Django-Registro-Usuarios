@@ -1,0 +1,104 @@
+{% extends 'usuarios/base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>⚙️ Inventario Ninja</h1>
+
+    <p>
+        Herramientas disponibles en el inventario.
+    </p>
+
+    <div class="acciones-crud">
+
+        <a href="/productos/registrar/">
+            ➕ Nueva herramienta
+        </a>
+
+        <a href="/productos/">
+            🏠 Inicio
+        </a>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Nombre</th>
+
+                <th>Proveedor Ninja</th>
+
+                <th>Precio</th>
+
+                <th>Acciones</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for producto in productos %}
+
+            <tr>
+
+                <td>
+                    {{ producto.id }}
+                </td>
+
+                <td>
+                    {{ producto.nombre }}
+                </td>
+
+                <td>
+                    {{ producto.marca }}
+                </td>
+
+                <td>
+                    ${{ producto.precio }}
+                </td>
+
+                <td>
+
+                    <a href="/productos/actualizar/{{ producto.id }}/">
+                        ✏️ Editar
+                    </a>
+
+                    <a
+                        href="/productos/eliminar/{{ producto.id }}/"
+                        onclick="return confirmarEliminacion();"
+                    >
+                        🗑️ Eliminar
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% empty %}
+
+            <tr>
+
+                <td colspan="5">
+
+                    No existen herramientas registradas.
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
