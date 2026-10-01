@@ -1,9 +1,12 @@
 # Entorno virtual
 venv/
+bin/
+lib/
 
 # Archivos temporales de Python
 __pycache__/
 *.pyc
+pyvenv.cfg
 
 # Base de datos local
 db.sqlite3
