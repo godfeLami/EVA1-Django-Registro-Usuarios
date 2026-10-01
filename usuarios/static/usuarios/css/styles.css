@@ -589,3 +589,45 @@ body {
 
 }
 
+/* Tabla del inventario ninja */
+
+.inventario-tabla {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background: white;
+    color: #1f2937;
+    font-size: 15px;
+}
+
+.inventario-tabla th {
+    padding: 15px;
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    border: 1px solid #d1d5db;
+}
+
+.inventario-tabla td {
+    padding: 14px;
+    background: white;
+    color: #1f2937;
+    text-align: center;
+    border: 1px solid #d1d5db;
+}
+
+.inventario-tabla tbody tr:nth-child(even) td {
+    background: #f1f5f9;
+}
+
+.inventario-tabla tbody tr:hover td {
+    background: #ffedd5;
+}
+
+@media (max-width: 768px) {
+    .inventario-tabla {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
